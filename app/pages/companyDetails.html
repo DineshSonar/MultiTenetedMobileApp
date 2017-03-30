@@ -1,0 +1,85 @@
+<script type="text/javascript">
+		var lang = new Lang();
+		lang.dynamic('th', 'js/langpack/th.json');
+        lang.dynamic('ru','js/langpack/russian.json');
+        lang.dynamic('ae','js/langpack/arabic.json');
+        lang.dynamic('tamil','js/langpack/India(Tamil).json');
+		lang.init({
+			defaultLang: 'en'
+		});
+</script>
+<div class="modal-body clearfix" style="background-color: white;padding-top: 50px;height: 500px;">
+		  <div class="form-group">
+              <table>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Company Name : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "CompanyName"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Company Code : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "CompanyCode"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Company Abbreviation Name : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "CompanyAbbrName"></p></font></label></td>
+                  </tr>
+                                    <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Contact Person : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "ContactPerson"></p></font></label></td>
+                  </tr>
+                                    <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"> Company Address One : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "AddressOne"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Company Address Two : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "AddressTwo"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Company CityTown : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "CompanyCityTown"></p></font></label></td>
+                  </tr>
+                  
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Pin Code : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "PinCode"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Phone Number : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "PhoneNumber"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Pan Number : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "PanNo"></p></font></label></td>
+                  </tr>
+              </table>
+
+		  </div>
+</div>
+
+<Script>
+    var CompanyName = window.localStorage.getItem("CompanyName");
+    var CompanyCode = window.localStorage.getItem("CompanyCode");
+    var CompanyAbbrName = window.localStorage.getItem("CompanyAbbrName");
+    var ContactPerson = window.localStorage.getItem("ContactPerson");
+    var AddressOne = window.localStorage.getItem("AddressOne");
+    var AddressTwo = window.localStorage.getItem("AddressTwo");
+    var CompanyCityTown = window.localStorage.getItem("CompanyCityTown");
+    var PinCode = window.localStorage.getItem("PinCode");
+    var PhoneNumber = window.localStorage.getItem("PhoneNumber");
+    var PanNo = window.localStorage.getItem("PanNo");
+    
+    
+    document.getElementById("CompanyName").innerHTML = CompanyName;
+	document.getElementById("CompanyCode").innerHTML = CompanyCode;
+    document.getElementById("CompanyAbbrName").innerHTML = CompanyAbbrName;
+    document.getElementById("ContactPerson").innerHTML = ContactPerson;
+    document.getElementById("AddressOne").innerHTML = AddressOne;
+    document.getElementById("AddressTwo").innerHTML = AddressTwo;
+    document.getElementById("CompanyCityTown").innerHTML = CompanyCityTown;
+    document.getElementById("PinCode").innerHTML = PinCode;
+    document.getElementById("PhoneNumber").innerHTML = PhoneNumber;
+    document.getElementById("PanNo").innerHTML = PanNo;
+    
+
+</Script>

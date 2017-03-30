@@ -122,7 +122,26 @@
         "Select Language":"اختار اللغة",
         "Language":"لغة",
         "Amount should be numeric.":"وينبغي أن تكون كمية رقمية.",
-        "Amount should be greater than 0.":"وينبغي أن تكون كمية أكبر من 0."
+        "Amount should be greater than 0.":"وينبغي أن تكون كمية أكبر من 0.",
+        "Employee Details":"تفاصيل الموظف",
+        "Company Details":"تفاصيل الشركة",
+        "Company Name :":"اسم الشركة :",
+        "Company Code :":"رمز الشركة:",
+        "Company Abbreviation Name :":" اسم الشركة المختصرة :",
+        "Contact Person :":"الشخص الذي يمكن الاتصال به :",
+        "Company Address One :":"عنوان الشركة الأولى :",
+        "Company Address Two :":"عنوان الشركة اثنين :",
+        "Company CityTown :":"شركة مدينة تاون :",
+        "Pin Code :":"رمز بين :",
+        "Phone Number :":"رقم الهاتف :",
+        "Pan Number :":"رقم عموم :",
+        "Employee Name :":"اسم الموظف :",
+        "Employee Code :":"رمز الموظف :",
+        "Employee Cost Center :":"مركز تكاليف الموظفين :",
+        "Employee Grade :":"موظف الصف :",
+        "Employee Unit :":"وحدة الموظف :",
+        "Employee Functional Reporter :":"الموظف الوظيفي المراسل :"
+        
 	},
 	"regex": [
 		["Enter your user name","أدخل اسم المستخدم الخاص بك"],

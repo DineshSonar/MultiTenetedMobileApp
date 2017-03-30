@@ -1,0 +1,59 @@
+<script type="text/javascript">
+		var lang = new Lang();
+		lang.dynamic('th', 'js/langpack/th.json');
+        lang.dynamic('ru','js/langpack/russian.json');
+        lang.dynamic('ae','js/langpack/arabic.json');
+        lang.dynamic('tamil','js/langpack/India(Tamil).json');
+		lang.init({
+			defaultLang: 'en'
+		});
+</script>
+<div class="modal-body clearfix" style="background-color: white;padding-top: 50px;height: 500px;">
+		  <div class="form-group">
+              <table>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Name : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmplName"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Code : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmplCode"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Cost Center : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmpCostCenter"></p></font></label></td>
+                  </tr>
+                                    <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Grade : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmpGrade"></p></font></label></td>
+                  </tr>
+                                    <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Unit : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmpUnit"></p></font></label></td>
+                  </tr>
+                  <tr>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2">Employee Functional Reporter : </font></label> </td>
+                      <td><label><font lang="en" face="verdana" color="gray" size="2"><p id = "EmpFR"></p></font></label></td>
+                  </tr>
+              </table>
+
+		  </div>
+</div>
+
+<Script>
+    var employee_code = window.localStorage.getItem("EmpCode");
+    var firstName = window.localStorage.getItem("FirstName");
+    var lastName = window.localStorage.getItem("LastName");
+    var EmpCostCenter = window.localStorage.getItem("EmpCostCenter");
+    var EmpGrade = window.localStorage.getItem("EmpGrade");
+    var EmpUnit = window.localStorage.getItem("EmpUnit");
+    var EmpFR = window.localStorage.getItem("EmpFR");
+    
+    document.getElementById("EmplName").innerHTML = firstName+" "+lastName;
+	document.getElementById("EmplCode").innerHTML = employee_code;
+    document.getElementById("EmpCostCenter").innerHTML = EmpCostCenter;
+    document.getElementById("EmpGrade").innerHTML = EmpGrade;
+    document.getElementById("EmpUnit").innerHTML = EmpUnit;
+    document.getElementById("EmpFR").innerHTML = EmpFR;
+
+</Script>

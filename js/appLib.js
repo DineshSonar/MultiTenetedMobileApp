@@ -151,7 +151,6 @@ if (window.openDatabase) {
 		t.executeSql("CREATE TABLE IF NOT EXISTS travelExpenseNameMst (id INTEGER PRIMARY KEY ASC,expenseNameId INTEGER, expenseName TEXT, isModeCategory char(1),accountCodeId INTEGER,accHeadId INTEGER REFERENCES travelAccountHeadMst(accHeadId))");
 		t.executeSql("CREATE TABLE IF NOT EXISTS travelSettleExpDetails (tsExpId INTEGER PRIMARY KEY ASC,travelRequestId INTEGER, accHeadId INTEGER REFERENCES travelAccountHeadMst(accHeadId), expNameId INTEGER REFERENCES travelExpenseNameMst(expenseNameId),expDate DATE,expNarration TEXT, expUnit INTEGER, expAmt Double, currencyId INTEGER REFERENCES currencyMst(currencyId),travelModeId INTEGER REFERENCES travelModeMst(travelModeId), travelCategoryId INTEGER REFERENCES travelCategoryMst(travelCategoryId), cityTownId INTEGER REFERENCES cityTownMst(cityTownId),tsExpAttachment BLOB)");
 		t.executeSql("CREATE TABLE IF NOT EXISTS travelRequestDetails (travelRequestId INTEGER PRIMARY KEY ASC, travelRequestNo TEXT,title TEXT, accountHeadId INTEGER,travelStartDate DATE,travelEndDate DATE,travelDomOrInter CHAR(1))");
-        t.executeSql("CREATE TABLE IF NOT EXISTS travelRequestDetails (travelRequestId INTEGER PRIMARY KEY ASC, travelRequestNo TEXT,title TEXT, accountHeadId INTEGER,travelStartDate DATE,travelEndDate DATE,travelDomOrInter CHAR(1))");
         t.executeSql("CREATE TABLE IF NOT EXISTS accountHeadEAMst (accountHeadId INTEGER PRIMARY KEY ASC, accHeadName TEXT)");
         t.executeSql("CREATE TABLE IF NOT EXISTS advanceType (advancetypeID INTEGER PRIMARY KEY ASC, advancetype TEXT)");
         t.executeSql("CREATE TABLE IF NOT EXISTS employeeAdvanceDetails (empAdvID INTEGER PRIMARY KEY ASC, emplAdvVoucherNo TEXT,empAdvTitle TEXT,Amount Double)");
@@ -1159,7 +1158,67 @@ function setUserSessionDetails(val,userJSON){
     window.localStorage.setItem("multiLangInMobile",false);
     }else{
      window.localStorage.setItem("multiLangInMobile",val.multiLangInMobile); 
-    } 
+    }
+
+    if(val.hasOwnProperty('EmplyeeDetailsJSON')){
+
+        if(val.EmplyeeDetailsJSON.EmpCode != null){
+            window.localStorage.setItem("EmpCode",val.EmplyeeDetailsJSON.EmpCode); 
+        } 
+        if(val.EmplyeeDetailsJSON.EmpUnit != null){
+            window.localStorage.setItem("EmpUnit",val.EmplyeeDetailsJSON.EmpUnit); 
+        }
+         if(val.EmplyeeDetailsJSON.EmpCostCenter != null){
+            window.localStorage.setItem("EmpCostCenter",val.EmplyeeDetailsJSON.EmpCostCenter); 
+        }
+         if(val.EmplyeeDetailsJSON.EmpGrade != null){
+            window.localStorage.setItem("EmpGrade",val.EmplyeeDetailsJSON.EmpGrade); 
+        }
+         if(val.EmplyeeDetailsJSON.EmpFR != null){
+            window.localStorage.setItem("EmpFR",val.EmplyeeDetailsJSON.EmpFR); 
+        }
+    }
+    
+        if(val.hasOwnProperty('CompanyJSON')){
+
+            if(val.CompanyJSON.CompanyName != null){
+            window.localStorage.setItem("CompanyName",val.CompanyJSON.CompanyName); 
+        }
+            if(val.CompanyJSON.CompanyAbbrName != null){
+            window.localStorage.setItem("CompanyAbbrName",val.CompanyJSON.CompanyAbbrName); 
+        }
+            if(val.CompanyJSON.CompanyCode != null){
+            window.localStorage.setItem("CompanyCode",val.CompanyJSON.CompanyCode); 
+        } 
+            if(val.CompanyJSON.ContactPerson != null){
+            window.localStorage.setItem("ContactPerson",val.CompanyJSON.ContactPerson); 
+        } 
+            if(val.CompanyJSON.AddressOne != null){
+            window.localStorage.setItem("AddressOne",val.CompanyJSON.AddressOne); 
+        } 
+            if(val.CompanyJSON.AddressTwo != null){
+            window.localStorage.setItem("AddressTwo",val.CompanyJSON.AddressTwo); 
+        } 
+            if(val.CompanyJSON.AddressThree != null){
+            window.localStorage.setItem("AddressThree",val.CompanyJSON.AddressThree); 
+        } 
+            if(val.CompanyJSON.CompanyCityTown != null){
+            window.localStorage.setItem("CompanyCityTown",val.CompanyJSON.CompanyCityTown); 
+        } 
+            if(val.CompanyJSON.PinCode != null){
+            window.localStorage.setItem("PinCode",val.CompanyJSON.PinCode); 
+        } 
+            if(val.CompanyJSON.PanNo != null){
+            window.localStorage.setItem("PanNo",val.CompanyJSON.PanNo); 
+        } 
+           if(val.CompanyJSON.PhoneNumber != null){
+            window.localStorage.setItem("PhoneNumber",val.CompanyJSON.PhoneNumber); 
+        } 
+            
+            
+        
+    }
+    
     //End
 	 window.localStorage.setItem("UserName",userJSON["user"]);
 	 window.localStorage.setItem("Password",userJSON["pass"]);
@@ -1189,6 +1248,10 @@ function dropAllTableDetails(){
 		t.executeSql("DELETE TABLE travelExpenseNameMst");
 		t.executeSql("DELETE TABLE travelSettleExpDetails");
 		t.executeSql("DELETE TABLE travelRequestDetails");
+        t.executeSql("DELETE TABLE accountHeadEAMst");
+        t.executeSql("DELETE TABLE advanceType");
+        t.executeSql("DELETE TABLE employeeAdvanceDetails");
+        t.executeSql("DELETE TABLE currencyConversionMst");
         
 	 });
 
@@ -2442,9 +2505,29 @@ function synchronizeWhiteListMasterData() {
 }
 
  function showMultiLanguag(){
-		var headerBackBtn=defaultPagePath+'backbtnPage.html';
-    // var pageRef=defaultPagePath+'helpMenuPage.html';
+     var headerBackBtn=defaultPagePath+'backbtnPage.html';;
      var pageRef=defaultPagePath+'multiLanguage.html';
+			j(document).ready(function() {
+				j('#mainHeader').load(headerBackBtn);
+				j('#mainContainer').load(pageRef);
+			});
+   appPageHistory.push(pageRef);
+	
+ }
+
+ function showEmployeeDetails(){
+     var headerBackBtn=defaultPagePath+'backbtnPage.html';
+     var pageRef=defaultPagePath+'employeeDetails.html';
+			j(document).ready(function() {
+				j('#mainHeader').load(headerBackBtn);
+				j('#mainContainer').load(pageRef);
+			});
+   appPageHistory.push(pageRef);
+	}
+
+ function showCompanyDetails(){
+     var headerBackBtn=defaultPagePath+'backbtnPage.html';
+     var pageRef=defaultPagePath+'companyDetails.html';
 			j(document).ready(function() {
 				j('#mainHeader').load(headerBackBtn);
 				j('#mainContainer').load(pageRef);

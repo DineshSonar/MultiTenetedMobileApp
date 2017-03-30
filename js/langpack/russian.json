@@ -122,7 +122,26 @@
         "Select Language":"Выберите язык",
         "Language":"Язык",
         "Amount should be numeric.":"Сумма должна быть числовой.",
-        "Amount should be greater than 0.":"Сумма должна быть больше 0."
+        "Amount should be greater than 0.":"Сумма должна быть больше 0.",
+        "Employee Details":"Сведения о сотруднике",
+        "Company Details":"Сведения о компании",
+        "Company Name :":"Название компании :",
+        "Company Code :":"Код компании :",
+        "Company Abbreviation Name :":"Название компании:",
+        "Contact Person :":"Контактное лицо :",
+        "Company Address One :":"Адрес компании Один:",
+        "Company Address Two :":"Адрес компании Два:",
+        "Company CityTown :":"Компания Город Город:",
+        "Pin Code :":"Пин-код :",
+        "Phone Number :":"Номер телефона :",
+        "Pan Number :":"Номер лотка:",
+        "Employee Name :":"Имя сотрудника :",
+        "Employee Code :":"Код сотрудника:",
+        "Employee Cost Center :":"Центр затрат для сотрудников:",
+        "Employee Grade :":"Уровень сотрудника:",
+        "Employee Unit :":"Группа сотрудников:",
+        "Employee Functional Reporter :":"Сотрудник Функциональный репортер:"
+        
 	},
 	"regex": [
 		["Enter your user name","Введите имя пользователя"],
